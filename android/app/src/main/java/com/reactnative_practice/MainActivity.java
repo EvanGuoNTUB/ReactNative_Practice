@@ -1,4 +1,4 @@
-package com.reactnative_pratice;
+package com.reactnative_practice;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
@@ -12,7 +12,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "ReactNative_Pratice";
+    return "ReactNative_Practice";
   }
 
   /**
