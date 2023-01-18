@@ -19,25 +19,27 @@ const Setting = ({ navigation, route }) => {
 
   useEffect(() => {
     axios.get(baseURL).then((response) => {
-      // setLoading(false);
+      setLoading(false);
       setListData(response.data);
     });
   }, []);
 
   return (
-    <SafeAreaView>
+    <>
       {loading ? (
-        <View style={[styles.container]}>
-          <ActivityIndicator
-            style={styles.activityIndicator}
-            animating={loading}
-            size="large"
-            color="#0000ff"
-          />
-          <Text style={styles.indicatorText}>Loading...</Text>
-        </View>
-      ) : (
         <>
+          <View style={styles.container}>
+            <ActivityIndicator
+              style={styles.activityIndicator}
+              animating={loading}
+              size="large"
+              color="#FFFFFF"
+            />
+            <Text style={styles.indicatorText}>Loading...</Text>
+          </View>
+        </>
+      ) : (
+        <SafeAreaView>
           <Text style={styles.title}>List Item</Text>
           <ListItem
             leadingMode="avatar"
@@ -141,9 +143,9 @@ const Setting = ({ navigation, route }) => {
               </>
             )}
           />
-        </>
+        </SafeAreaView>
       )}
-    </SafeAreaView>
+    </>
   );
 };
 
@@ -160,16 +162,17 @@ const styles = StyleSheet.create({
     height: 44
   },
   container: {
-    flex: 1, 
-    backgroundColor: 'pink',
+    flex: 1,
+    backgroundColor: '#AAA',
     alignItems: 'center',
-    justifyContent: 'center', 
-    flexDirection: 'row',
-    paddingTop: 600,
+    justifyContent: 'center'
   },
   activityIndicator: {
     alignItems: 'center',
-    justifyContent: 'center', 
+    justifyContent: 'center',
+  },
+  indicatorText:{
+    color:'#FFFFFF'
   }
 });
 
