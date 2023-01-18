@@ -18,9 +18,9 @@ const Profile = () => {
           <TextInput
             variant="standard"
             inputContainerStyle={styles.margin}
-            InputLabelProps={{shrink: true}}
+            InputLabelProps={{ shrink: true }}
             placeholder="Account"
-            onChangeText={newAccount => storedEvents.setAccount(newAccount)}
+            onChangeText={(newAccount) => storedEvents.setAccount(newAccount)}
             defaultValue={storedEvents.account}
             leading={
               <View>
@@ -28,7 +28,7 @@ const Profile = () => {
                   source={require('@src/assets/images/user.png')}
                   style={{
                     width: 40,
-                    height: 40,
+                    height: 40
                   }}
                 />
               </View>
@@ -38,9 +38,11 @@ const Profile = () => {
           <TextInput
             variant="standard"
             inputContainerStyle={styles.margin}
-            InputLabelProps={{shrink: true}}
+            InputLabelProps={{ shrink: true }}
             placeholder="Password"
-            onChangeText={newPassword => storedEvents.setPassword(newPassword)}
+            onChangeText={(newPassword) =>
+              storedEvents.setPassword(newPassword)
+            }
             defaultValue={storedEvents.password}
             leading={
               <View>
@@ -48,7 +50,7 @@ const Profile = () => {
                   source={require('@src/assets/images/lock.png')}
                   style={{
                     width: 40,
-                    height: 40,
+                    height: 40
                   }}
                 />
               </View>
@@ -57,7 +59,8 @@ const Profile = () => {
         </View>
         <TouchableOpacity
           style={[styles.margin, styles.loginBtn]}
-          onPress={() => login()}>
+          onPress={() => login()}
+        >
           <Text style={styles.loginBtnTxt}>login</Text>
         </TouchableOpacity>
       </View>
@@ -65,10 +68,11 @@ const Profile = () => {
   }
   return (
     <View style={styles.profileBox}>
-      <Text style={{fontSize: 40}}>Hello,{storedEvents.account}</Text>
+      <Text style={{ fontSize: 40 }}>Hello,{storedEvents.account}</Text>
       <TouchableOpacity
         style={[styles.margin, styles.loginBtn]}
-        onPress={() => logout()}>
+        onPress={() => logout()}
+      >
         <Text style={styles.loginBtnTxt}>logout</Text>
       </TouchableOpacity>
     </View>
@@ -78,19 +82,19 @@ const styles = StyleSheet.create({
   loginBox: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   inputBox: {
     width: '80%',
     backgroundColor: '#fff',
-    borderRadius: 10,
+    borderRadius: 10
   },
   margin: {
-    margin: 16,
+    margin: 16
   },
   loginTitle: {
     color: 'black',
-    fontSize: 20,
+    fontSize: 20
   },
   loginBtn: {
     width: 200,
@@ -98,13 +102,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#00f0aa',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 10,
+    borderRadius: 10
   },
-  loginBtnTxt: {fontSize: 20, fontWeight: '500', color: 'black'},
+  loginBtnTxt: { fontSize: 20, fontWeight: '500', color: 'black' },
   profileBox: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
-  },
+    alignItems: 'center'
+  }
 });
 export default Profile;
